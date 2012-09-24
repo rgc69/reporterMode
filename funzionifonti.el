@@ -55,7 +55,6 @@ Special commands:
 (setq *relaz* "")
 (setq relazione1 "")
 (setq termineP 0)
-(setq *home* (getenv "HOME"))
 ;funzione per inserire le relazioni nel buffer principale clikkando sulle relazioni nel buffer "Q"
 (defun InserimentoRelazioni() ;#######################################################################
 (interactive)
@@ -139,7 +138,7 @@ Special commands:
 
 (defun Associazione() ;#############################################################################
  (interactive)
- (load (concat *home* "/Documents/emacs/fileEmacs/fonti.el"))
+ (load "~/Documents/emacs/fileEmacs/fonti.el")
  ;se l'utente ha "marcato" un termine da associare in seguito... 
 (if (numberp (mark 'non-nil))
     (progn
@@ -216,7 +215,7 @@ Special commands:
 
 (defun Associazione2() ;###########################################################################
  (interactive) 
- (load (concat *home* "/Documents/emacs/fileEmacs/fonti.el"))
+ (load "~/Documents/emacs/fileEmacs/fonti.el")
 (if (numberp (mark 'non-nil))
     (progn
        (setq punto0 (point))
@@ -377,7 +376,7 @@ Special commands:
 (setq map1 (make-sparse-keymap))
 (define-key map1 [mouse-1] 'mini)
 (make-text-button punto2 punto3 'keymap map1 'help-echo ter)
-(load (concat *home* "/Documents/emacs/fileEmacs/fonti.el"))
+(load "~/Documents/emacs/fileEmacs/fonti.el")
   (setq soggetto(eval  termine0))
 (setq numero-hash (hash-table-count soggetto))  ;termine
 (progn (maphash #'(lambda (k v)(setq y(format "%S" k))(setq x(format "%S" v))
@@ -449,7 +448,7 @@ Special commands:
 (make-text-button punto2 punto3 'keymap map1 'help-echo ter)
 ;(if (not (member termineQ *alist*))
 ;(progn
-(load (concat *home* "/Documents/emacs/fileEmacs/fonti.el"))
+(load "~/Documents/emacs/fileEmacs/fonti.el")
 (setq soggetto(eval  *miotermine*))
 (setq numero-hash (hash-table-count soggetto))  
 (progn (maphash #'(lambda (k v)(setq y(format "%S" k))(setq x(format "%S" v))
