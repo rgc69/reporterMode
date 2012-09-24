@@ -214,7 +214,7 @@ relazione nome *termine*)
 (prompt-for-relazione-aggiunta))
 (progn
 (kill-buffer "Aggiunta")
-(load ("~/Documents/emacs/fileEmacs/fonti.el")
+(load "~/Documents/emacs/fileEmacs/fonti.el")
 (setq numero-hash (hash-table-count (eval *miotermine*)))
 (VisualizzazioneAssociazioni2)
 (sub1)))))))
